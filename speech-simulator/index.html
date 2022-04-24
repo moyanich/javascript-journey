@@ -5,6 +5,8 @@
 	<meta name="viewport" content="width=device-width">
 	<title>JavaScript Speech Simulator</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="../style.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-okaidia.min.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="col-lg-8 mx-auto p-3 py-md-5">
@@ -20,32 +22,44 @@
 			<hr class="col-12">
 			<h4><strong>Used in the code</strong></h4>
 			<hr class="col-12 mb-3">
-			<h6>SpeechSynthesis</h6>
+			<h6><a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis" target="_blank">SpeechSynthesis</a></h6>
 			<p>The SpeechSynthesis can be used to get information about the types of voices available on your device.</p>
 
-			<pre>
-				new SpeechSynthesisUtterance
-			</pre>
+<pre>
+<code class="language-js">
+	const synth = window.speechSynthesis;
+	document.querySelector('#speak').addEventListener('click', speak);
 
-			<div class="row g-5">
+	function speak() {
+		const message = document.querySelector('#message').value;
+		const textToYell = `${message}`;
+		document.getElementById("speechOutput").innerText = textToYell;
+		let yellThis = new SpeechSynthesisUtterance(textToYell);
+		synth.speak(yellThis);
+	}
+</code>
+</pre>
+
+			<div class="row g-5 mt-3">
 				<div class="col-md-10">
 					<form>
 						<div class="mb-3">
-							<label for="exampleFormControlTextarea1" class="form-label">Type your message</label>
+							<label class="form-label">Type your message to speak aloud</label>
 							<textarea class="form-control" id="message" rows="4"></textarea>
 						</div>
 					</form>
 
 					<button id="speak" type="button" class="btn btn-primary" name="button">Speak Aloud</button>
 
-					<h2 id="speechInterpreter" class="mt-3"></h2>
-        		</div>
+					<h2 id="speechOutput" class="mt-3"></h2>
+				</div>
 			</div>
 
 		</main>	
 	</div>
 
-    <script src="main.js"></script>
+	<script src="main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
 
 		
 </body>
