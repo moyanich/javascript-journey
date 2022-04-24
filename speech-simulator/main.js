@@ -1,7 +1,7 @@
 const synth = window.speechSynthesis;
-document.querySelector('#startSpeaking').addEventListener('click', speak);
+document.querySelector('#startSpeaking').addEventListener('click', speakAloud);
 
-function speak() {
+function speakAloud() {
 	const message = document.querySelector('#wordsToSpeak').value;
 	const textToYell = `${message}`;
 	document.getElementById("speechOutput").innerText = textToYell;
