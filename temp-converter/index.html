@@ -18,61 +18,44 @@
 
 		<main>
 			<h1>Temperature Converter</h1>
-			<h6><a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis" target="_blank">SpeechSynthesis</a></h6>
-			<h6 class="mb-3"><a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance" target="_blank">SpeechSynthesisUtterance</a></h6>
-
+			<p>Converts temperature in Celsius to Farenheight</p>
+			
 			<hr class="col-12">
 			<h4><strong>The Code</strong></h4>
 			
 <pre>
 <code class="language-js">
-	document.querySelector('#convertC').addEventListener('click', TempToCelsius);
-
-document.querySelector('#convertF').addEventListener('click', TempToFahrenheit);
-
-
-function TempToCelsius() {
-      let degree = document.querySelector('#temp').value;
-      degree = (parseFloat(degree) - 32) * 5/9;
-
-      document.getElementById("newtemp").innerHTML = `The temperature in Celsius is ${degree}`;
-}
-
+document.querySelector('#convertToFarenheight').addEventListener('click', TempToFahrenheit);
 
 function TempToFahrenheit() {
-      let temp = document.querySelector('#temp').value;
-
-      let convertedTemp = (parseFloat(temp) * 9/5) + 32;
-
-      document.getElementById("newtemp").innerHTML = `The temperature in Fahrenheit is ${convertedTemp}`;
+	let degree = document.querySelector('#temperature').value;
+	degree = (parseFloat(degree) * 9/5) + 32;
+	document.getElementById("newtemp").innerHTML = `The temperature in Fahrenheit is ${degree}`;
 }
 </code>
 </pre>
 
-            <div class="row g-5 mt-3">
-                <div class="col-md-6">
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label">Enter Temperature</label>
-                            <input id="temp" class="form-control" type="number">
-                        </div>
-                    </form>
+			<div class="row g-5 mt-3 bg-light p-4">
+				<div class="col-md-6">
+					<form>
+						<div class="mb-3">
+						<label class="form-label">Enter Temperature in Celsius</label>
+						<input id="temperature" class="form-control" type="number">
+						</div>
+					</form>
 
-                    <h4 id="newtemp" class="mb-4"></h4>
+					<h4 id="newtemp" class="mb-4"></h4>
 
-                    <button id="convertC" type="button" class="btn btn-primary" name="button">Convert to Celsius</button>
-        
-                    <button id="convertF" type="button" class="btn btn-primary" name="button">Convert to Farenheight</button>
+					<button id="convertToFarenheight" type="button" class="btn btn-primary" name="button">Convert to Farenheight</button>
 
-                </div>
-            </div>
-         
+				</div>
+			</div>
+		
 		</main>	
 	</div>
 
 	<script src="main.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
-
 		
 </body>
 

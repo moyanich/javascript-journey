@@ -1,20 +1,7 @@
-document.querySelector('#convertC').addEventListener('click', TempToCelsius);
-
-document.querySelector('#convertF').addEventListener('click', TempToFahrenheit);
-
-
-function TempToCelsius() {
-      let degree = document.querySelector('#temp').value;
-      degree = (parseFloat(degree) - 32) * 5/9;
-
-      document.getElementById("newtemp").innerHTML = `The temperature in Celsius is ${degree}`;
-}
-
+document.querySelector('#convertToFarenheight').addEventListener('click', TempToFahrenheit);
 
 function TempToFahrenheit() {
-      let temp = document.querySelector('#temp').value;
-
-      let convertedTemp = (parseFloat(temp) * 9/5) + 32;
-
-      document.getElementById("newtemp").innerHTML = `The temperature in Fahrenheit is ${convertedTemp}`;
+      let degree = document.querySelector('#temperature').value;
+      degree = (parseFloat(degree) * 9/5) + 32;
+      document.getElementById("newtemp").innerHTML = `The temperature in Fahrenheit is ${degree}`;
 }

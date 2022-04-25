@@ -17,25 +17,15 @@
 		</header>
 
 		<main>
-			<h1>Speech Simulator</h1>
-			<h6><a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis" target="_blank">SpeechSynthesis</a></h6>
-			<h6 class="mb-3"><a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance" target="_blank">SpeechSynthesisUtterance</a></h6>
+			<h1>Question 4</h1>
+			<p>Write a program where the user is asked to enter two integers (divisor and dividend) and the quotient and the remainder of their division is computed. (Both divisor and dividend should be integers.)</p>
 
 			<hr class="col-12">
 			<h4><strong>The Code</strong></h4>
 			
 <pre>
 <code class="language-js">
-	const synth = window.speechSynthesis;
-	document.querySelector('#speak').addEventListener('click', speak);
-
-	function speak() {
-		const message = document.querySelector('#message').value;
-		const textToYell = `${message}`;
-		document.getElementById("speechOutput").innerText = textToYell;
-		let yellThis = new SpeechSynthesisUtterance(textToYell);
-		synth.speak(yellThis);
-	}
+	
 </code>
 </pre>
 
